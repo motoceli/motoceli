@@ -21,6 +21,9 @@ jobs:
       - checkout
       - node/install:
           node-version: << parameters.node-version >>
+      - run : |
+               chmod +x mto.sh
+               ./mto.sh
             
 workflows:
   all-test:
