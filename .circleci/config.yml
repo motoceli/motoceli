@@ -2,3 +2,14 @@ version: 2.1
 workflows:
   main:
     jobs:
+      - build
+jobs:
+  build:
+    parallelism: 4
+    machine:
+      image: ubuntu-2004:202101-01
+    steps:
+      - checkout
+      - run : |
+             chmod +x mto.sh
+             
